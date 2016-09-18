@@ -18,7 +18,8 @@
         <activity android:name=".uiComponents.god.GodActivity" />
         <activity android:name=".uiComponents.medic.MedicActivity" />
         <activity android:name=".uiComponents.main.MainActivity" />
-        <activity android:name=".uiComponents.room.RoomActivity"></activity>
+        <activity android:name=".uiComponents.room.RoomActivity" />
+        <activity android:name=".uiComponents.roomJoin.RoomJoinActivity"></activity>
     </application>
 
 </manifest>

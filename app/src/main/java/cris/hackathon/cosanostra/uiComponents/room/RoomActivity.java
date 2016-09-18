@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import cris.hackathon.cosanostra.R;
+import cris.hackathon.cosanostra.uiComponents.roomJoin.RoomJoinActivity;
 
 public class RoomActivity extends AppCompatActivity {
 
@@ -20,37 +21,57 @@ public class RoomActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_room);
 
+        Bundle extras = getIntent().getExtras();
+
         button = (Button) findViewById(R.id.crearSala);
         button2 = (Button) findViewById(R.id.confirmar);
         button3 = (Button) findViewById(R.id.cancelar);
         editText = (EditText) findViewById(R.id.editText);
 
-        button.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View arg0)
-            {
-                editText.setEnabled(false);
-                button.setVisibility(View.GONE);
-                button2.setVisibility(View.VISIBLE);
-                button3.setVisibility(View.VISIBLE);
-            }
-        });
+        if(extras != null){
+            button.setVisibility(View.GONE);
+            button3.setVisibility(View.GONE);
+            editText.setEnabled(false);
+            button2.setVisibility(View.VISIBLE);
 
-        button2.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View arg0)
-            {
-                //llevar a otro lado (crear intent)
-            }
-        });
+            button3.setOnClickListener(new View.OnClickListener(){
+                public void onClick(View arg0)
+                {
+                    //ver a donde te manda: pantalla inicial de la partida (no de la app)
 
-        button3.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View arg0)
-            {
-                editText.setEnabled(true);
-                button3.setVisibility(View.GONE);
-                button2.setVisibility(View.GONE);
-                button.setVisibility(View.VISIBLE);
-            }
-        });
+                }
+            });
+
+        }else{
+            button.setOnClickListener(new View.OnClickListener(){
+                public void onClick(View arg0)
+                {
+                    editText.setEnabled(false);
+                    button.setVisibility(View.GONE);
+                    button2.setVisibility(View.VISIBLE);
+                    button3.setVisibility(View.VISIBLE);
+                }
+            });
+
+            button2.setOnClickListener(new View.OnClickListener(){
+                public void onClick(View arg0)
+                {
+                    //llevar a otro lado (crear intent)
+                }
+            });
+
+            button3.setOnClickListener(new View.OnClickListener(){
+                public void onClick(View arg0)
+                {
+                    editText.setEnabled(true);
+                    button3.setVisibility(View.GONE);
+                    button2.setVisibility(View.GONE);
+                    button.setVisibility(View.VISIBLE);
+                }
+            });
+        }
+
+
 
 
 
