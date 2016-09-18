@@ -25,6 +25,8 @@ import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 
+import cris.hackathon.cosanostra.uiComponents.god.GodActivity;
+
 public class LoginActivity extends AppCompatActivity implements
         View.OnClickListener, GoogleApiClient.OnConnectionFailedListener {
 
@@ -35,7 +37,7 @@ public class LoginActivity extends AppCompatActivity implements
     private ProgressDialog mProgressDialog;
 
     private SignInButton btnSignIn;
-    private Button btnSignOut, btnRevokeAccess;
+    private Button btnSignOut, btnRevokeAccess, btnGod;
     private LinearLayout llProfileLayout;
     private ImageView imgProfilePic;
     private TextView txtName, txtEmail, lblLogin;
@@ -48,6 +50,7 @@ public class LoginActivity extends AppCompatActivity implements
         btnSignIn = (SignInButton) findViewById(R.id.btn_sign_in);
         btnSignOut = (Button) findViewById(R.id.btn_sign_out);
         btnRevokeAccess = (Button) findViewById(R.id.btn_revoke_access);
+        btnGod = (Button) findViewById(R.id.btn_god);
         llProfileLayout = (LinearLayout) findViewById(R.id.llProfile);
         imgProfilePic = (ImageView) findViewById(R.id.imgProfilePic);
         txtName = (TextView) findViewById(R.id.txtName);
@@ -57,6 +60,7 @@ public class LoginActivity extends AppCompatActivity implements
         btnSignIn.setOnClickListener(this);
         btnSignOut.setOnClickListener(this);
         btnRevokeAccess.setOnClickListener(this);
+        btnGod.setOnClickListener(this);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
@@ -145,7 +149,15 @@ public class LoginActivity extends AppCompatActivity implements
             case R.id.btn_revoke_access:
                 revokeAccess();
                 break;
+            case R.id.btn_god:
+                intentGodActivity();
+                break;
         }
+    }
+
+    private void intentGodActivity() {
+        Intent intent = new Intent(LoginActivity.this, GodActivity.class);
+        startActivity(intent);
     }
 
     @Override
