@@ -26,18 +26,20 @@ import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 
 import cris.hackathon.cosanostra.uiComponents.god.GodActivity;
+import cris.hackathon.cosanostra.uiComponents.main.MainActivity;
 
 public class LoginActivity extends AppCompatActivity implements
         View.OnClickListener, GoogleApiClient.OnConnectionFailedListener {
 
     private static final String TAG = LoginActivity.class.getSimpleName();
     private static final int RC_SIGN_IN = 007;
+    private static final int RC_SIGN_OUT = 003;
 
     private GoogleApiClient mGoogleApiClient;
     private ProgressDialog mProgressDialog;
 
     private SignInButton btnSignIn;
-    private Button btnSignOut, btnRevokeAccess, btnGod;
+    private Button btnSignOut, btnRevokeAccess, btnInit;
     private LinearLayout llProfileLayout;
     private ImageView imgProfilePic;
     private TextView txtName, txtEmail, lblLogin;
@@ -50,7 +52,7 @@ public class LoginActivity extends AppCompatActivity implements
         btnSignIn = (SignInButton) findViewById(R.id.btn_sign_in);
         btnSignOut = (Button) findViewById(R.id.btn_sign_out);
         btnRevokeAccess = (Button) findViewById(R.id.btn_revoke_access);
-        btnGod = (Button) findViewById(R.id.btn_god);
+        btnInit = (Button) findViewById(R.id.btn_init);
         llProfileLayout = (LinearLayout) findViewById(R.id.llProfile);
         imgProfilePic = (ImageView) findViewById(R.id.imgProfilePic);
         txtName = (TextView) findViewById(R.id.txtName);
@@ -60,7 +62,7 @@ public class LoginActivity extends AppCompatActivity implements
         btnSignIn.setOnClickListener(this);
         btnSignOut.setOnClickListener(this);
         btnRevokeAccess.setOnClickListener(this);
-        btnGod.setOnClickListener(this);
+        btnInit.setOnClickListener(this);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
@@ -149,16 +151,18 @@ public class LoginActivity extends AppCompatActivity implements
             case R.id.btn_revoke_access:
                 revokeAccess();
                 break;
-            case R.id.btn_god:
-                intentGodActivity();
+            case R.id.btn_init:
+                intentMainActivity();
                 break;
         }
     }
 
-    private void intentGodActivity() {
-        Intent intent = new Intent(LoginActivity.this, GodActivity.class);
+    private void intentMainActivity() {
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(intent);
     }
+
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -225,12 +229,14 @@ public class LoginActivity extends AppCompatActivity implements
             btnSignIn.setVisibility(View.GONE);
             lblLogin.setVisibility(View.GONE);
             btnSignOut.setVisibility(View.VISIBLE);
+            btnInit.setVisibility(View.VISIBLE);
             btnRevokeAccess.setVisibility(View.VISIBLE);
             llProfileLayout.setVisibility(View.VISIBLE);
         } else {
             btnSignIn.setVisibility(View.VISIBLE);
             lblLogin.setVisibility(View.VISIBLE);
             btnSignOut.setVisibility(View.GONE);
+            //btnInit.setVisibility(View.GONE);
             btnRevokeAccess.setVisibility(View.GONE);
             llProfileLayout.setVisibility(View.GONE);
         }

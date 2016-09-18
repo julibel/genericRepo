@@ -84,13 +84,14 @@
         android:layout_height="wrap_content"
         android:text="@string/btn_revoke_access"
         android:visibility="gone"
-        android:layout_marginTop="230dp" />
+        android:layout_below="@+id/llProfile"
+        android:layout_alignStart="@+id/lblLogin" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="God Mode"
-        android:id="@+id/btn_god"
+        android:text="Iniciar"
+        android:id="@+id/btn_init"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="99dp" />
