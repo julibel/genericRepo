@@ -18,6 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".uiComponents.God.GodActivity" />
+        <activity android:name=".uiComponents.Medic.MedicAtivity"></activity>
     </application>
 
 </manifest>
