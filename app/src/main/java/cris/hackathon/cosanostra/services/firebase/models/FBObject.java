@@ -1,4 +1,4 @@
-package cris.hackathon.cosanostra.services.firebase.model;
+package cris.hackathon.cosanostra.services.firebase.models;
 
 /**
  * Created by CristianErik on 18/09/2016.
