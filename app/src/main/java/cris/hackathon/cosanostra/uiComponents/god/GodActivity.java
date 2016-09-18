@@ -1,6 +1,5 @@
 package cris.hackathon.cosanostra.uiComponents.god;
 
-import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.CountDownTimer;
 import android.support.v7.app.AlertDialog;
@@ -11,9 +10,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.os.Handler;
-import android.widget.Toast;
 
-import cris.hackathon.cosanostra.Init;
 import cris.hackathon.cosanostra.R;
 
 
