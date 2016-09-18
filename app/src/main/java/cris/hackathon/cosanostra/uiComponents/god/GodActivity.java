@@ -1,4 +1,4 @@
-package cris.hackathon.cosanostra.uiComponents.God;
+package cris.hackathon.cosanostra.uiComponents.god;
 
 import android.content.DialogInterface;
 import android.graphics.Color;

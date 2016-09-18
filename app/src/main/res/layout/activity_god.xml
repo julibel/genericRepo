@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="cris.hackathon.cosanostra.uiComponents.God.GodActivity">
+    tools:context="cris.hackathon.cosanostra.uiComponents.god.GodActivity">
 
     <LinearLayout
         android:layout_width="fill_parent"
