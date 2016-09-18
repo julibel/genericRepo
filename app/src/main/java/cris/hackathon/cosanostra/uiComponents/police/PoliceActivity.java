@@ -1,4 +1,4 @@
-package cris.hackathon.cosanostra.uiComponents.medic;
+package cris.hackathon.cosanostra.uiComponents.police;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,15 +8,15 @@ import android.widget.LinearLayout;
 
 import cris.hackathon.cosanostra.R;
 
-public class MedicActivity extends AppCompatActivity {
+public class PoliceActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_medic);
+        setContentView(R.layout.activity_police);
 
-        ImageView img= (ImageView) findViewById(R.id.imageView_medic);
-        img.setImageResource(R.mipmap.ic_medic);
+        ImageView img= (ImageView) findViewById(R.id.imageView_police);
+        img.setImageResource(R.mipmap.ic_police);
 
         Button myButton = new Button(this);
         myButton.setText("Push Me");
