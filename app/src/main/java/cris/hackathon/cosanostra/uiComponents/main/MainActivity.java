@@ -12,6 +12,7 @@ import com.google.android.gms.common.api.Status;
 
 import cris.hackathon.cosanostra.LoginActivity;
 import cris.hackathon.cosanostra.R;
+import cris.hackathon.cosanostra.uiComponents.room.RoomActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View arg0)
             {
-                //llevar a otro lado (crear intent)
+                Intent intent = new Intent(MainActivity.this, RoomActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -44,11 +46,8 @@ public class MainActivity extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener(){
             public void onClick(View arg0)
             {
-
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
-
-
 
             }
         });
