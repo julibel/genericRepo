@@ -7,7 +7,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="cris.hackathon.cosanostra.LoginActivity">
+    tools:context="cris.hackathon.cosanostra.LoginActivity"
+    android:transitionGroup="false"
+    android:background="@color/backgroundPrimary">
 
     <LinearLayout
         android:id="@+id/llProfile"
@@ -36,22 +38,36 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:textColor="@color/textPrimary" />
 
             <TextView
                 android:id="@+id/txtEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:textSize="18dp" />
+                android:textSize="18dp"
+                android:textColor="@color/textPrimary" />
         </LinearLayout>
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Inicie Sessión"
+        android:id="@+id/lblLogin"
+        android:layout_below="@+id/llProfile"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:visibility="visible"
+        android:textColor="@color/textPrimary" />
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/btn_sign_in"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="180dp"
+        android:layout_marginBottom="250dp"
         android:layout_alignParentBottom="true" />
 
     <Button
@@ -60,12 +76,14 @@
         android:layout_height="wrap_content"
         android:text="@string/btn_logout_from_google"
         android:visibility="gone"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginTop="180dp" />
 
     <Button
         android:id="@+id/btn_revoke_access"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/btn_revoke_access"
-        android:visibility="gone" />
+        android:visibility="gone"
+        android:layout_marginTop="230dp" />
+
 </RelativeLayout>
