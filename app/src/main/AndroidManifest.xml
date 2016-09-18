@@ -17,6 +17,7 @@
         </activity>
         <activity android:name=".uiComponents.god.GodActivity" />
         <activity android:name=".uiComponents.medic.MedicActivity" />
+        <activity android:name=".uiComponents.main.MainActivity"></activity>
     </application>
 
 </manifest>
