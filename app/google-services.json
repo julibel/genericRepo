@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "566510087503",
+    "firebase_url": "https://cosa-nostra-9b374.firebaseio.com",
+    "project_id": "cosa-nostra-9b374",
+    "storage_bucket": "cosa-nostra-9b374.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:566510087503:android:d686ec70a4ff3e22",
+        "android_client_info": {
+          "package_name": "cris.hackathon.cosanostra"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "566510087503-cr795gm6jv84go2tdque44feukdl9u0h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCCwEfC7eheCsGe7q1yDbmMwbe1u40eqE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
