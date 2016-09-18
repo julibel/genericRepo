@@ -1,7 +1,9 @@
 {
   "project_info": {
     "project_number": "141013686412",
-    "project_id": "firebase-cosa-nostra"
+    "firebase_url": "https://fir-cosa-nostra.firebaseio.com",
+    "project_id": "firebase-cosa-nostra",
+    "storage_bucket": "firebase-cosa-nostra.appspot.com"
   },
   "client": [
     {
@@ -21,6 +23,10 @@
           }
         },
         {
+          "client_id": "141013686412-j0he8h33ab4qf83rtdu83iilqv38gb29.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
           "client_id": "141013686412-s2lbbit8rskdt64q4sirshpldh79ifet.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -35,11 +41,16 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "141013686412-j0he8h33ab4qf83rtdu83iilqv38gb29.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
-          "status": 1
+          "status": 2
         }
       }
     },
@@ -60,6 +71,10 @@
           }
         },
         {
+          "client_id": "141013686412-j0he8h33ab4qf83rtdu83iilqv38gb29.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
           "client_id": "141013686412-s2lbbit8rskdt64q4sirshpldh79ifet.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -74,11 +89,16 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "141013686412-j0he8h33ab4qf83rtdu83iilqv38gb29.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
-          "status": 1
+          "status": 2
         }
       }
     }
