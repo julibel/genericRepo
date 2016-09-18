@@ -236,7 +236,7 @@ public class LoginActivity extends AppCompatActivity implements
             btnSignIn.setVisibility(View.VISIBLE);
             lblLogin.setVisibility(View.VISIBLE);
             btnSignOut.setVisibility(View.GONE);
-            //btnInit.setVisibility(View.GONE);
+            btnInit.setVisibility(View.GONE);
             btnRevokeAccess.setVisibility(View.GONE);
             llProfileLayout.setVisibility(View.GONE);
         }
