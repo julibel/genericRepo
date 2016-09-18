@@ -4,7 +4,9 @@ package cris.hackathon.cosanostra.services.firebase.model;
  * Created by CristianErik on 18/09/2016.
  */
 public enum FirebaseRef {
-    Users, Characters, Matches;
+    Users,
+    Characters,
+    Matches;
 
     private String _value;
 
