@@ -7,7 +7,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import cris.hackathon.cosanostra.R;
-import cris.hackathon.cosanostra.uiComponents.roomJoin.RoomJoinActivity;
 
 public class RoomActivity extends AppCompatActivity {
 
@@ -47,7 +46,7 @@ public class RoomActivity extends AppCompatActivity {
                 public void onClick(View arg0)
                 {
                     editText.setEnabled(false);
-                    button.setVisibility(View.GONE);
+                    button.setVisibility(View.INVISIBLE);
                     button2.setVisibility(View.VISIBLE);
                     button3.setVisibility(View.VISIBLE);
                 }
@@ -64,17 +63,11 @@ public class RoomActivity extends AppCompatActivity {
                 public void onClick(View arg0)
                 {
                     editText.setEnabled(true);
-                    button3.setVisibility(View.GONE);
-                    button2.setVisibility(View.GONE);
+                    button3.setVisibility(View.INVISIBLE);
+                    button2.setVisibility(View.INVISIBLE);
                     button.setVisibility(View.VISIBLE);
                 }
             });
         }
-
-
-
-
-
-
     }
 }
