@@ -1,9 +1,16 @@
 package cris.hackathon.cosanostra.services.firebase;
 
+import android.util.Log;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import cris.hackathon.cosanostra.services.firebase.model.FBNotified;
 import cris.hackathon.cosanostra.services.firebase.model.FBObject;
+import cris.hackathon.cosanostra.services.firebase.model.FirebaseNotif;
 import cris.hackathon.cosanostra.services.firebase.model.FirebaseRef;
 
 /**
@@ -12,6 +19,25 @@ import cris.hackathon.cosanostra.services.firebase.model.FirebaseRef;
 public class FirebaseRepository {
 
     private DatabaseReference _ref;
+
+    public static void SubscribeEvent(final FBNotified subscriber) {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference ref = database.getReference("subscriptions");
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String value = dataSnapshot.getValue(String.class);
+                FirebaseNotif notification = FirebaseNotif.From(value);
+                subscriber.sendNext(notification);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                //TODO: Log error
+                subscriber.sendTerminated();
+            }
+        });
+    }
 
     public FirebaseRepository(FirebaseRef ref) {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -23,7 +49,22 @@ public class FirebaseRepository {
         _ref.setValue(something.toFBObject());
     }
 
-    //TODO: Implementacion del fetch en progreso.
+    public void read(final FBNotified subscriber) {
+        _ref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String value = dataSnapshot.getValue(String.class);
+                FirebaseNotif notification = FirebaseNotif.From(value);
+                subscriber.sendNext(notification);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                //TODO: Log error
+                subscriber.sendTerminated();
+            }
+        });
+    }
 
 }
 
