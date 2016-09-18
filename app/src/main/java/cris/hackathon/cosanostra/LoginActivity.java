@@ -114,19 +114,22 @@ public class LoginActivity extends AppCompatActivity implements
             Log.e(TAG, "display name: " + acct.getDisplayName());
 
             String personName = acct.getDisplayName();
-            String personPhotoUrl = acct.getPhotoUrl().toString();
+
             String email = acct.getEmail();
 
-            Log.e(TAG, "Name: " + personName + ", email: " + email
-                    + ", Image: " + personPhotoUrl);
+            Log.e(TAG, "Name: " + personName + ", email: " + email);
 
             txtName.setText(personName);
             txtEmail.setText(email);
-            Glide.with(getApplicationContext()).load(personPhotoUrl)
-                    .thumbnail(0.5f)
-                    .crossFade()
-                    .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .into(imgProfilePic);
+
+            if(acct.getPhotoUrl() != null) {
+                String personPhotoUrl = acct.getPhotoUrl().toString();
+                Glide.with(getApplicationContext()).load(personPhotoUrl)
+                        .thumbnail(0.5f)
+                        .crossFade()
+                        .diskCacheStrategy(DiskCacheStrategy.ALL)
+                        .into(imgProfilePic);
+            }
 
             updateUI(true);
         } else {
